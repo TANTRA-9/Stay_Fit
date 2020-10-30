@@ -1,21 +1,17 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
-import Home from './Checkers/Home';
-import Login from './Checkers/login';
-import Register from './Checkers/register';
+import style from './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import List from './Components/List/List';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Link to="/">Home</Link><br/>
-        <Link to="/login">Login</Link><br/>
-        <Link to="/register">Register</Link>
-
-        <Route exact path="/" component={Home}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
+      <div className={style.App}>
+        <Route exact path='/' component={Home}/>
+        <Route path='/list' component={List}/>
+        <Route path='/login' component={Login} />
       </div>
     </BrowserRouter>
   );
