@@ -41,6 +41,7 @@
     text-align: center;
     background-color: transparent;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .v2 button:hover{

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faHeart, faList, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faHeart, faList, faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
 import fire from '../../Fire';
 
 class nav extends Component {
@@ -22,6 +22,7 @@ class nav extends Component {
                         <Nav className="mr-auto">
                             <Nav.Link href="/"><FontAwesomeIcon icon={faHome} /> Home</Nav.Link>
                             <Nav.Link href="/list"><FontAwesomeIcon icon={faList} /> List</Nav.Link>
+                            <Nav.Link href="/create"><FontAwesomeIcon icon={faPlus} /> Add Hospital</Nav.Link>
                         </Nav>
                         <Nav>
                             {localStorage.getItem('login') ? 

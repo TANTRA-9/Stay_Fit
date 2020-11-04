@@ -10,7 +10,7 @@ const Protected = ({component:Cmp,...rest}) => (
         ):
         <Redirect 
         to="/Login"
-        />
+        >{alert("You Have To Login First")}</Redirect>
     )}
     />
 );
