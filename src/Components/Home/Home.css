@@ -1,16 +1,45 @@
 .v1{
     background-image: url('./Images/hpHome.jpg');
     height: 637px;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
     background-position: center center;
     background-size: cover;
 }
 
 .v1Text{
-    margin-left: 15%;
+    color: black;
+    border: 3px none #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-110%,-25%);
+    text-align: center;
+}
+
+.listBtn{
+    display: inline-block;
+    padding: 0.6em 1.4em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    border: 0.9px;
+    box-sizing: 2em;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.listBtn:hover{
+    background-color: #524747;
 }
 
 .v2{
-    background-color: gainsboro;
+    background-color: #bdd0d6;
     text-align: center;
 }
 
@@ -21,10 +50,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-}
-
-.v3{
-    background-color: rgb(173,113,102);
 }
 
 .v2 button{
@@ -119,4 +144,10 @@
     flex-direction: column;
     color: white;
     padding:10px;
+}
+
+.v3{
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
 }

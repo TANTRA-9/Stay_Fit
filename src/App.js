@@ -7,6 +7,7 @@ import List from './Components/List/List';
 import Create from './Components/Create/Create';
 import Hospital from './Components/Hospital/Hospital';
 import Protected from './Components/Protected/Protected';
+import Registration from './Components/Registration/Registration';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/login' component={Login} />
         <Protected path="/create" component={Create}/>
         <Route path="/hospital/:id" component={Hospital}/>
+        <Route path="/registration" component={Registration}/>
       </div>
     </BrowserRouter>
   );

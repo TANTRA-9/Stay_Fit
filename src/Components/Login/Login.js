@@ -22,7 +22,7 @@ class Login extends Component {
         else {
             fire.auth().signInWithEmailAndPassword(this.state.name, this.state.pass).then(response => {
                 localStorage.setItem('login', this.state);
-                this.props.history.goBack();
+                this.props.history.push("list");
                 this.notify();
             }).catch(err => {
                 alert(err.message);

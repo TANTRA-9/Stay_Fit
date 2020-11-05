@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav,NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faHeart, faList, faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
 import fire from '../../Fire';
@@ -21,13 +21,16 @@ class nav extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="/"><FontAwesomeIcon icon={faHome} /> Home</Nav.Link>
-                            <Nav.Link href="/list"><FontAwesomeIcon icon={faList} /> List</Nav.Link>
                             <Nav.Link href="/create"><FontAwesomeIcon icon={faPlus} /> Add Hospital</Nav.Link>
+                            <NavDropdown title={<span><FontAwesomeIcon icon={faList} /> Lists</span>} id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/list">Hospitals List</NavDropdown.Item>
+                            <NavDropdown.Item href="/registration">Registrations List</NavDropdown.Item>
+                        </NavDropdown>
                         </Nav>
                         <Nav>
-                            {localStorage.getItem('login') ? 
-                            <Nav.Link onClick={this.cl} href="/login"><FontAwesomeIcon icon={faUser} /> Logout</Nav.Link>:
-                            <Nav.Link href="/login"><FontAwesomeIcon icon={faUser} /> Login</Nav.Link>}
+                            {localStorage.getItem('login') ?
+                                <Nav.Link onClick={this.cl} href="/login"><FontAwesomeIcon icon={faUser} /> Logout</Nav.Link> :
+                                <Nav.Link href="/login"><FontAwesomeIcon icon={faUser} /> Login</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

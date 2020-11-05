@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Container, Form, Col } from 'react-bootstrap';
 import fire from '../../Fire';
 import Navbar from '../Navbar/Navbar';
 import style from './Create.css'
@@ -14,38 +14,39 @@ class Create extends Component {
         city: "",
         state: "",
         zip: "",
-        image:{name:"Choose File"},
-        userUid:"",
-        url:"",
+        email:"",
+        phone:"",
+        image: { name: "Choose File" },
+        userUid: "",
+        url: "",
     }
 
-    componentDidMount(){
+    componentDidMount() {
         fire.database().ref('ForUid').on('value', snapshot => {
-            if(snapshot.val() != null){
-                this.setState({userUid:fire.auth().currentUser.uid});
-                console.log(this.state.userUid);
+            if (snapshot.val() != null) {
+                this.setState({ userUid: fire.auth().currentUser.uid });
             }
         });
     }
 
     setImage = e => {
-        if(e.target.files[0]){
-            this.setState({image:e.target.files[0]});
-            console.log(e.target.files[0]);
+        if (e.target.files[0]) {
+            this.setState({ image: e.target.files[0] });
         }
     }
 
     uploadImage = e => {
-        const upload = fire.storage().ref("Images/"+this.state.userUid+"/"+this.state.image.name)
-        .put(this.state.image);
-        upload.on('state_changed',snapshot=>{},error=>{alert(error)},
-        ()=>fire.storage().ref("Images").child(this.state.userUid).child(this.state.image.name)
-        .getDownloadURL().then(url=>{this.setState({url:url});console.log(url);alert("Image Uploaded Successfully")}));
+        const upload = fire.storage().ref("Images/" + this.state.userUid + "/" + this.state.image.name)
+            .put(this.state.image);
+        upload.on('state_changed', snapshot => { }, error => { alert(error) },
+            () => fire.storage().ref("Images").child(this.state.userUid).child(this.state.image.name)
+                .getDownloadURL().then(url => { this.setState({ url: url }); alert("Image Uploaded Successfully") }));
     }
 
     add = e => {
         if (this.state.name.length === 0 || this.state.address.length === 0 || this.state.city.length === 0
-            || this.state.state.length === 0 || this.state.zip.length === 0 || this.state.url.length === 0 ) {
+            || this.state.state.length === 0 || this.state.zip.length === 0 || this.state.url.length === 0
+            || this.state.email.length === 0 || this.state.phone.length === 0) {
             alert("Below field are empty")
         }
         else {
@@ -55,7 +56,9 @@ class Create extends Component {
                 city: this.state.city,
                 state: this.state.state,
                 zip: this.state.zip,
-                url:this.state.url
+                url: this.state.url,
+                email:this.state.email,
+                phone:this.state.phone
             }
             fire.database().ref('List').push(check, err => {
                 if (err) {
@@ -63,7 +66,7 @@ class Create extends Component {
                 }
             });
             alert("Successfully added");
-            this.setState({ name: "", address: "", city: "", state: "", zip: "",image:"Choose File",url:"" });
+            this.setState({ name: "", address: "", city: "", state: "", zip: "", image: "Choose File", url: "", email: "" ,phone: "" });
         }
     }
 
@@ -73,8 +76,8 @@ class Create extends Component {
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-toastify@4.5.1/dist/ReactToastify.css" />
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
                 <Navbar />
-                <br />
-                <h5 style={{ textDecoration: "underline", fontWeight: "bold" }}>Add Hospital</h5><br /><br />
+                <h5 style={{ textDecoration: "underline", fontWeight: "bold",marginTop:"5px" }}>
+                    Add Hospital</h5><br />
                 <Container>
                     <form>
                         <div className="form-group">
@@ -93,14 +96,27 @@ class Create extends Component {
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text"
-                                style={{cursor:"pointer"}} onClick={this.uploadImage}>Upload</span>
+                                    style={{ cursor: "pointer" }} onClick={this.uploadImage}>Upload</span>
                             </div>
                             <div className="custom-file">
-                                <input type="file" className="custom-file-input" id="inputGroupFile01" 
-                                style={{cursor:"pointer"}} onChange={this.setImage}/>
+                                <input type="file" className="custom-file-input" id="inputGroupFile01"
+                                    style={{ cursor: "pointer" }} onChange={this.setImage} />
                                 <label className="custom-file-label" htmlFor="inputGroupFile01">{this.state.image.name}</label>
                             </div>
                         </div>
+                        <label htmlFor="inputZip">Contact Details</label>
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Control type="email" placeholder="Enter email" 
+                                onChange={event => this.setState({ email: event.target.value })}/>
+                            </Form.Group>
+
+                            <Form.Group as={Col} controlId="formGridPassword">
+                                <Form.Control type="text" placeholder="Enter Phone No" 
+                                onChange={event => this.setState({ phone: event.target.value })}/>
+                            </Form.Group>
+                        </Form.Row>
+
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputCity">City</label>

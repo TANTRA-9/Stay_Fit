@@ -26,7 +26,7 @@ class List extends Component {
             <div className={style.back}>
                 <Navbar />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-toastify@4.5.1/dist/ReactToastify.css" />
-                <br/><h4>Search Hospital</h4><br />
+                <br/><h4>Hospitals List</h4><br />
                 {
                     this.state.list.length === 0 ? <p>Please Wait...</p>
                     :
