@@ -23,3 +23,14 @@
     color: #ffffff;
     background-color: #000000;
 }
+
+.toast2{
+    background-color: #323232;
+    color: #ffffff;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 3px;
+}

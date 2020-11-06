@@ -33,6 +33,7 @@
     border: none;
     overflow: hidden;
     outline: none;
+    cursor: pointer;
   }
   
   .neon:hover{
@@ -43,4 +44,15 @@
     border: none;
     overflow: hidden;
     outline: none;
+}
+
+.check{
+    background-color: #323232;
+    color: #ffffff;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 3px;
 }

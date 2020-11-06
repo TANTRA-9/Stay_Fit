@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Form, Col } from 'react-bootstrap';
+import { Container, Form, Col, Toast } from 'react-bootstrap';
 import fire from '../../Fire';
 import Navbar from '../Navbar/Navbar';
 import style from './Create.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { GiCancel } from 'react-icons/gi';
+import { Redirect } from 'react-router-dom';
 
 class Create extends Component {
 
@@ -14,11 +16,14 @@ class Create extends Component {
         city: "",
         state: "",
         zip: "",
-        email:"",
-        phone:"",
+        email: "",
+        phone: "",
         image: { name: "Choose File" },
         userUid: "",
         url: "",
+        imgToast: false,
+        hosToast: false,
+        list:false,
     }
 
     componentDidMount() {
@@ -27,6 +32,18 @@ class Create extends Component {
                 this.setState({ userUid: fire.auth().currentUser.uid });
             }
         });
+    }
+
+    gotoList = () => {
+        this.setState({list:true});
+    }
+
+    setImgToast = () => {
+        this.setState({ imgToast: !this.state.imgToast });
+    }
+
+    setHosToast = () => {
+        this.setState({ hosToast: !this.state.hosToast });
     }
 
     setImage = e => {
@@ -40,7 +57,7 @@ class Create extends Component {
             .put(this.state.image);
         upload.on('state_changed', snapshot => { }, error => { alert(error) },
             () => fire.storage().ref("Images").child(this.state.userUid).child(this.state.image.name)
-                .getDownloadURL().then(url => { this.setState({ url: url }); alert("Image Uploaded Successfully") }));
+                .getDownloadURL().then(url => { this.setState({ url: url }); this.setImgToast() }));
     }
 
     add = e => {
@@ -57,26 +74,26 @@ class Create extends Component {
                 state: this.state.state,
                 zip: this.state.zip,
                 url: this.state.url,
-                email:this.state.email,
-                phone:this.state.phone
+                email: this.state.email,
+                phone: this.state.phone
             }
             fire.database().ref('List').push(check, err => {
                 if (err) {
                     alert(err);
                 }
             });
-            alert("Successfully added");
-            this.setState({ name: "", address: "", city: "", state: "", zip: "", image: "Choose File", url: "", email: "" ,phone: "" });
+            this.setHosToast();
+            this.setState({ name: "", address: "", city: "", state: "", zip: "", image: "Choose File", url: "", email: "", phone: "" });
         }
     }
 
     render() {
         return (
             <div className={style.back}>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-toastify@4.5.1/dist/ReactToastify.css" />
+                {this.state.list ? <Redirect to="/list"/> : null}
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
                 <Navbar />
-                <h5 style={{ textDecoration: "underline", fontWeight: "bold",marginTop:"5px" }}>
+                <h5 style={{ textDecoration: "underline", fontWeight: "bold", marginTop: "5px" }}>
                     Add Hospital</h5><br />
                 <Container>
                     <form>
@@ -107,13 +124,15 @@ class Create extends Component {
                         <label htmlFor="inputZip">Contact Details</label>
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridEmail">
-                                <Form.Control type="email" placeholder="Enter email" 
-                                onChange={event => this.setState({ email: event.target.value })}/>
+                                <Form.Control type="email" placeholder="Enter email"
+                                    onChange={event => this.setState({ email: event.target.value })}
+                                    value={this.state.email} />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Control type="text" placeholder="Enter Phone No" 
-                                onChange={event => this.setState({ phone: event.target.value })}/>
+                                <Form.Control type="text" placeholder="Enter Phone No"
+                                    onChange={event => this.setState({ phone: event.target.value })}
+                                    value={this.state.phone} />
                             </Form.Group>
                         </Form.Row>
 
@@ -182,10 +201,33 @@ class Create extends Component {
                 <br />
                 <button className={style.btn} onClick={this.add}>Add <FontAwesomeIcon icon={faPlus} /></button>
                 <br />
+                <div
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+                    <div
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            right: 0,
+                            marginTop:"60px",
+                            marginRight:"5px"
+                        }}
+                    >
+                        <Toast show={this.state.imgToast} className={style.toast2}>
+                                <h6>Image Successfully Added <GiCancel onClick={this.setImgToast} style={{cursor:"pointer"}}/></h6>
+                        </Toast>
+
+                        <Toast show={this.state.hosToast} className={style.toast2}>
+                                <h6>Hospital added Successfully <GiCancel onClick={this.setHosToast} style={{cursor:"pointer"}}/></h6>
+                                <h6 onClick={this.gotoList} style={{textDecoration:"underline",cursor:"pointer"}}>Hospitals List</h6>
+                        </Toast>
+                    </div>
+                </div>
                 <br /><br />
             </div>
         );
     }
-}
+} 
 
 export default Create;

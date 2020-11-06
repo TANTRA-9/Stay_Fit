@@ -14,15 +14,15 @@ class Home extends Component {
     }
 
     gotoCivil = () => {
-        this.props.history.push('hospital/-MLGxklpNVSblWW4xVKL');
+        this.props.history.push('hospital/-MLMKy-K0Vat3jDjKe3v');
     }
 
     gotoSiddhivinayak = () => {
-        this.props.history.push('hospital/-MLH-DJSUfCX9qHHX4AF');
+        this.props.history.push('hospital/-MLMOgbT6Hgd20VmQ24j');
     }
 
     gotoVohra = () => {
-        this.props.history.push('hospital/-MLIW0bPdYTMEPHu5SUg');
+        this.props.history.push('hospital/-MLMQ2K5QSsqwvGOMwUv');
     }
 
     list = () => {
@@ -75,7 +75,7 @@ class Home extends Component {
                         <div className={style.card} onClick={this.gotoVohra}>
                             <div className={style.card_image3}></div>
                             <div className={style.card_text}>
-                                <h2>Vohra</h2>
+                                <h2>Pura</h2>
                                 <p>The Hospital provides their 100% efforts to treat 
                                     patients. They also monitor consumer satisfaction 
                                     with regard to clinical care such as the approach of the doctor</p>
