@@ -75,7 +75,7 @@ class Home extends Component {
                         <div className={style.card} onClick={this.gotoVohra}>
                             <div className={style.card_image3}></div>
                             <div className={style.card_text}>
-                                <h2>Pura</h2>
+                                <h2>Puran</h2>
                                 <p>The Hospital provides their 100% efforts to treat 
                                     patients. They also monitor consumer satisfaction 
                                     with regard to clinical care such as the approach of the doctor</p>
