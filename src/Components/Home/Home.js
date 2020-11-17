@@ -35,15 +35,11 @@ class Home extends Component {
                 <Navbar fix="top" />
                 <br /><br />
                 <div className={style.v1}>
+                    <h1>Website Help You To Stay Fit</h1>
+                    <p>This Webiste Helps You To Find Hospitals Near<br/>
+                        You And Fix Your Appointment Remotely</p>
+                        <button className={style.listBtn}>Hospital List <MdArrowForward/></button>
                 </div>
-                <div className={style.v1Text}>
-                        <h1>Website Help You To Stay Fit</h1>
-                        <p>This Webiste Helps You To Find Hospitals Near You
-                            <br/>And Fix Your Appointment Remotely
-                        </p>
-                        <button className={style.listBtn} onClick={this.list}>Hospitals Lists <MdArrowForward size="23px"/></button>
-                </div>
-
                 {/* Hospital Card View */}
 
                 <div className={style.v2}>
@@ -88,7 +84,7 @@ class Home extends Component {
 
                 <div className={style.v3}>
                     <br/><br/>
-                    <h4><FaGithub size="35px"/> <a href="https://github.com/TANTRA-9/Stay_Fit.git" target = "_blank" 
+                    <h4><FaGithub size="35px"/><a href="https://github.com/TANTRA-9/Stay_Fit.git" target = "_blank" 
                     rel = "noopener noreferrer" style={{color:"white"}}>https://github.com/TANTRA-9/Stay_Fit.git</a>
                     </h4>
                     <h4><FaLinkedin size="35px"/> <a href="https://www.linkedin.com/in/nishant-tomar-aa2b3b184/"

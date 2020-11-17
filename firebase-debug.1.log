@@ -1,0 +1,22 @@
+[debug] [2020-11-08T14:57:59.375Z] ----------------------------------------------------------------------
+[debug] [2020-11-08T14:57:59.377Z] Command:       /usr/bin/node /usr/bin/firebase use --add
+[debug] [2020-11-08T14:57:59.378Z] CLI Version:   8.15.1
+[debug] [2020-11-08T14:57:59.378Z] Platform:      linux
+[debug] [2020-11-08T14:57:59.378Z] Node Version:  v12.19.0
+[debug] [2020-11-08T14:57:59.378Z] Time:          Sun Nov 08 2020 20:27:59 GMT+0530 (India Standard Time)
+[debug] [2020-11-08T14:57:59.379Z] ----------------------------------------------------------------------
+[debug] [2020-11-08T14:57:59.379Z] 
+[debug] [2020-11-08T14:57:59.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-08T14:57:59.385Z] > authorizing via signed-in user
+[debug] [2020-11-08T14:57:59.390Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=1000  
+ 
+[debug] [2020-11-08T14:58:00.218Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 08 Nov 2020 14:58:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-08T14:58:22.175Z] Error: EACCES: permission denied, open '/home/nishanttomar/Desktop/stay-fit/.firebaserc'
+    at Object.openSync (fs.js:462:3)
+    at Object.writeFileSync (fs.js:1384:35)
+    at RC.save (/usr/lib/node_modules/firebase-tools/lib/rc.js:130:16)
+    at RC.addProjectAlias (/usr/lib/node_modules/firebase-tools/lib/rc.js:32:21)
+    at /usr/lib/node_modules/firebase-tools/lib/commands/use.js:121:28
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.

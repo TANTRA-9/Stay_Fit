@@ -1,20 +1,19 @@
 .v1{
     background-image: url('./Images/hpHome.jpg');
     height: 637px;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
     background-position: center center;
     background-size: cover;
 }
 
-.v1Text{
+.v1 h1{
     color: black;
-    border: 3px none #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-110%,-25%);
-    text-align: center;
+    margin-left: 5%;
+    padding-top: 32vh;
+}
+
+.v1 p{
+    margin-left: 5%;
+    justify-content: center;
 }
 
 .listBtn{
@@ -32,6 +31,7 @@
     text-align: center;
     transition: all 0.2s;
     cursor: pointer;
+    margin-left: 5%;
 }
 
 .listBtn:hover{
@@ -72,6 +72,13 @@
 .v2 button:hover{
     color: #ffffff;
     background-color: #000000;
+}
+
+.v3{
+    background-color: #0c0c0c;
+    color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .card {
@@ -146,8 +153,8 @@
     padding:10px;
 }
 
-.v3{
-    background-color: #0c0c0c;
-    color: white;
-    text-align: center;
+@media (max-width:370px){
+    .v3{
+        overflow-x: hidden;
+    }
 }
