@@ -38,7 +38,7 @@ class Home extends Component {
                     <h1>Website Help You To Stay Fit</h1>
                     <p>This Webiste Helps You To Find Hospitals Near<br/>
                         You And Fix Your Appointment Remotely</p>
-                        <button className={style.listBtn}>Hospital List <MdArrowForward/></button>
+                        <button className={style.listBtn} onClick={this.list}>Hospital List <MdArrowForward/></button>
                 </div>
                 {/* Hospital Card View */}
 
