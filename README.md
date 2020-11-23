@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# I'm Nishant Tomar Full Stack Web Developer
 
-## Available Scripts
+I use React.js for front-end and Firebase for back-end (Database, Hosting, Storage, Authentication, Email Verification, Phone no Verification).
 
-In the project directory, you can run:
+## About Project
+Short Description :- This Webiste Helps You To Find Hospitals Near You And Fix Your Appointment Remotely.
 
-### `npm start`
+###### Features:- 
+1. Authentication and verification :- User sign up and login with firebase with real gmail verification.
+2. Remotely Registration :- Search hospital around you register on them for appointment remotely.
+3. Real time database :- You can add hospitals information with real time changes using simple user interface so people can see them.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Web Application Link`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+https://stayfit-d84a1.web.app
 
-### `npm test`
+### `Web Application Github Link`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://github.com/TANTRA-9/Stay_Fit.git
 
-### `npm run build`
+### Looking For Job
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I'm currently looking for job opportunity.\
+I have great experience in programming.\
+I know technology like Python, C++, Java, Javascript, CSS, HTML, Firebase, Android, Xml.\
+I created 2 projects one in android and one in React.js.\
+I'm also have good problem solving skills(Compititve Programming).\
+I'm 6 star rated on Hackerrank Problem Solving -> https://www.hackerrank.com/TANTRA9 \
+Codeforces Profile -> https://codeforces.com/profile/TANTRA09 \
+If you can help please contact me on gmail -> nishanttomar00009@gmail.com
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Another Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I created another project Android.
 
-### `npm run eject`
+###### Android Project Short Description :-
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Android social dating app allow you to connect with people world wide. Find your mate and connect with them by sending friend request. It provides you messaging facility to chat with closer ones easily.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Android Application Link`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+https://mega.nz/file/D9o3hAbb#hj3fHluV1qnZnDGU7gXw5l5nieh0GokUKL78pxuNgwU
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `Android Application Github Link`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+https://github.com/TANTRA-9/APMAH.git
