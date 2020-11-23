@@ -31,7 +31,7 @@ If you can help please contact me on gmail -> nishanttomar00009@gmail.com
 
 ### Another Project
 
-I created another project Android.
+I created another project in Android.
 
 ###### Android Project Short Description :-
 
